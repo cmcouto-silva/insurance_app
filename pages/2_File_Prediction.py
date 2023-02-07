@@ -3,13 +3,13 @@ import pandas as pd
 import streamlit as st
 
 st.set_page_config(page_title="Insurence Prediction", page_icon="../img/stethoscope.png")
-
+st.sidebar.header('File Prediction')
 st.title("Insurance prediction")
 
 st.markdown("Predict medical insurance based using a csv file:")
 
 # -- Model -- #
-with open('../models/model.pkl', 'rb') as file:
+with open('models/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 data = st.file_uploader('Upload your file')

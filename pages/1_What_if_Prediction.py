@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 st.set_page_config(page_title="Insurance Prediction", page_icon="../img/stethoscope.png")
-
+st.sidebar.header('What if Prediction')
 st.title("Insurance prediction")
 
 st.markdown("Predict medical insurance based on the following features:")
@@ -17,7 +17,7 @@ smoker = st.selectbox(label='Smoker', options=['no','yes'])
 
 # -- Model -- #
 
-with open('../models/model.pkl', 'rb') as file:
+with open('models/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 def prediction():
